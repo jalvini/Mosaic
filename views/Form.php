@@ -6,6 +6,7 @@
 <body>
 <?php require_once '../includes/header.php'; ?>
 
+<section id="body">
 <h1>Payment Information</h1>
 <div class="instructions">Please, fill out the following form to submit your payment.</div>
 
@@ -13,34 +14,31 @@
     $('table td:last').css('padding-right', 0);
 </script>
 <?php echo $controller->message != NULL ? $controller->message : false ?>
+
 <form method="post">
     <input type="hidden" name="amount" id="amount" value="100" />
 
     <div id="section" style="border: 1px solid #0993; margin-bottom: 15px; padding: 7px;">
         <h3>Credit Card Information</h3>
+        <div class="card-wrapper"></div>
 
-        <div class="label required">Cardholder Name</div>
-        <input type="text" name="cardOwner" />
-
-        <table cellspacing="0">
-            <tr>
-                <td>
-                    <div class="label" style="font-weight: bold;">Card Number:</div>
-                    <input type="text" name="cardNum" required="required" />
-                </td>
-                <td>
-                    <div class="label" style="font-weight: bold;">Card Code</div>
-                    <input type="text" name="cardCode" required="required" />
-                </td>
-                <td>
-                    <div class="label" style="font-weight: bold;">Expiration:</div>
-                    <input type="text" name="exMo" required="required" /> / <input type="text" name="exYr" required="required" />
-                </td>
-            </tr>
-        </table>
+        <div class="form-container active" style="margin-top: 20px; width: 100%; text-align: center;">
+                <input placeholder="Card number" type="tel" name="cardNum">
+                <input placeholder="Full name" type="text" name="name">
+                <input placeholder="MM/YY" type="tel" name="expiration">
+                <input placeholder="CVC" type="number" name="cardCode">
+        </div>
     </div>
+    <script src="/public/javascript/card.js"></script>
+    <script>
+        new Card({
+            form: document.querySelector('form'),
+            container: '.card-wrapper'
+        });
+    </script>
 
-    <div id="section" style="border: 1px solid #066; margin-bottom: 16px; padding: 10px;">
+
+    <div id="section" style="border: 1px solid #0993; margin-bottom: 15px; padding: 7px;">
         <h3>Billing Information</h3>
 
         <table cellspacing="0">
@@ -80,7 +78,7 @@
 
     <input type="submit" name="submit" value="Submit Payment" />
 </form>
-
+</section>
 <?php require_once '../includes/footer.php'; ?>
 </body>
 </html>

@@ -7,7 +7,8 @@
     <script src="/js/jquery.ui.js"></script>
     <script src="/scripts/common.js"></script>
     <script src="/scripts/messaging.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="../public/css/card.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/style.css">
     <style type="text/css">
         .instructions {
             font-style: italic;

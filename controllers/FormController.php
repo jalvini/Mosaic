@@ -20,7 +20,7 @@ class FormPage
         }
     }
 
-    public function Submit($ccNumber, $cardOwner, $cardCode, $exMo, $exYr, $first, $last, $comp, $add, $city, $state, $zip, $price)
+    public function Submit($ccNumber, $cardOwner, $cardCode, $expiration, $first, $last, $comp, $add, $city, $state, $zip, $price)
     {
         $creditCard = new CreditCard();
         $user = new User();
@@ -29,13 +29,13 @@ class FormPage
         $item = 'Sample Item';
 
         //SUBMIT FORM AND CHECK FOR POTENTIAL ERRORS. THIS IS A VERY QUICKLY PUT TOGETHER ERROR CHECKER. IT COULD BE BETTER
-        if (strlen($ccNumber) !== 16 || $cardOwner == NULL || strlen($cardCode) !== 3 || strlen($exMo) !== 2 || strlen($exYr) !== 2) {
+        if (strlen($ccNumber) < 16 || $cardOwner == NULL || strlen($cardCode) !== 3) {
             $this->message = 'You Have Entered Invalid Credit Card Information. Please Try Re-Entering Your Info';
         } else {
             if ($creditCard->onFile == NULL) {
                 $user->setUser($first, $last, $comp, $add, $city, $state, $zip);
                 $order->setOrder($item, $price, $first, $last);
-                $creditCard->setCCInfo($this->Encrypt($ccNumber), $cardOwner, $cardCode, $exMo, $exYr);
+                $creditCard->setCCInfo($this->Encrypt($ccNumber), $cardOwner, $cardCode, $expiration);
                 $this->message = 'Your Order Has Been Placed';
             } else {
                 $this->message = 'This Credit Card Is Already On File. Please Login!';

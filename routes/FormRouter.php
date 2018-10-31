@@ -30,10 +30,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $controller->Submit(
        // $_POST["amount"], ADD THIS TO ORDER
         $_POST['cardNum'],
-        $_POST['cardOwner'],
+        $_POST['name'],
         $_POST['cardCode'],
-        $_POST['exMo'],
-        $_POST['exYr'],
+        $_POST['expiration'],
         $_POST['fname'],
         $_POST['lname'],
         $_POST['company'],

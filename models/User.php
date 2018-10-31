@@ -24,7 +24,7 @@ class User extends Database
         $this->state = $state;
         $this->zip = $zip;
 
-        $stmt = $this->Connect()->prepare("INSERT INTO Orders (FirstName, LastName, Company, Address, City, State, Zip) VALUES (?,?,?,?,?,?,?)");
+        $stmt = $this->Connect()->prepare("INSERT INTO users (FirstName, LastName, Company, Address, City, State, Zip) VALUES (?,?,?,?,?,?,?)");
         $stmt->execute([$this->firstName, $this->lastName, $this->company, $this->address, $this->city, $this->state, $this->zip]);
     }
 

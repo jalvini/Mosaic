@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <?php require_once('../includes/tags.php'); ?>
+</head>
+<body>
+<?php require_once '../includes/header.php'; ?>
+<section id="body">
 <form method="post">
 
     <div id="section" style="border: 1px solid #0993; margin-bottom: 15px; padding: 7px;">
@@ -16,3 +24,7 @@
             </tr>
         </table>
     </div>
+</section>
+<?php require_once '../includes/footer.php'; ?>
+</body>
+</html>
