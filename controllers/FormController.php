@@ -50,9 +50,8 @@ class FormPage
         $secretIV = ENCRYPTIONIV;
         $key = hash('sha256', $secretKey);
         $iv = substr(hash('sha256', $secretIV), 0, 16);
-
-            $output = openssl_encrypt($data, $encryptionMethod, $key, 0, $iv);
-            $output = base64_encode($output);
+        $output = openssl_encrypt($data, $encryptionMethod, $key, 0, $iv);
+        $output = base64_encode($output);
 
         return $output;
     }
@@ -64,6 +63,7 @@ class FormPage
         $key = hash('sha256', $secretKey);
         $iv = substr(hash('sha256', $secretIV), 0, 16);
         $output = openssl_decrypt(base64_decode($data), $encryptionMethod, $key, 0, $iv);
+
         return($output);
     }
 }

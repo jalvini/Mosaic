@@ -32,5 +32,11 @@ const DATABASE = APPLICATION_PATH . DS .'librarys'. DS .'Database.php';
 
 const SESSION = APPLICATION_PATH . DS . 'models'. DS .'Session.php';
 
+const INCLUDES = APPLICATION_PATH . DS . 'includes' . DS;
+
+const HEADER = INCLUDES . 'header.php';
+const FOOTER = INCLUDES . 'footer.php';
+const TAGS = INCLUDES . 'tags.php';
+
 const ENCRYPTIONKEY = 'THIS*would*N0T*b3*THe*B3ST*encyption*KeY@sItE*';
-CONST ENCRYPTIONIV = 'TEstingIV@1';
+const ENCRYPTIONIV = 'TEstingIV@1';

@@ -1,84 +1,52 @@
 <!DOCTYPE html>
 <html>
-<head>
-<?php require_once('../includes/tags.php'); ?>
-</head>
-<body>
-<?php require_once '../includes/header.php'; ?>
-
-<section id="body">
-<h1>Payment Information</h1>
-<div class="instructions">Please, fill out the following form to submit your payment.</div>
-
-<script>
-    $('table td:last').css('padding-right', 0);
-</script>
-<?php echo $controller->message != NULL ? $controller->message : false ?>
-
-<form method="post">
-    <input type="hidden" name="amount" id="amount" value="100" />
-
-    <div id="section" style="border: 1px solid #0993; margin-bottom: 15px; padding: 7px;">
-        <h3>Credit Card Information</h3>
-        <div class="card-wrapper"></div>
-
-        <div class="form-container active" style="margin-top: 20px; width: 100%; text-align: center;">
-                <input placeholder="Card number" type="tel" name="cardNum">
-                <input placeholder="Full name" type="text" name="name">
-                <input placeholder="MM/YY" type="tel" name="expiration">
-                <input placeholder="CVC" type="number" name="cardCode">
+    <head>
+        <?php require_once(TAGS); ?>
+    </head>
+    <body>
+    <div class="container-fluid">
+        <?php require_once(HEADER); ?>
+            <div class="row">
+                <div class="col-lg">
+                    <section id="body">
+                        <h1>Payment Information</h1>
+                        <div class="instructions">Please, fill out the following form to submit your payment.</div>
+                        <?php echo $controller->message != NULL ? $controller->message : false ?>
+                        <form method="post">
+                            <input type="hidden" name="amount" id="amount" value="100" />
+                            <div class="section">
+                                <h3>Credit Card Information</h3>
+                                <div class="card-wrapper"></div>
+                                <div class="form-container active">
+                                    <input placeholder="Card number" type="tel" name="cardNum" class="form-control small margin-top">
+                                    <input placeholder="Full name" type="text" name="name" class="form-control small margin-top">
+                                    <input placeholder="MM/YY" type="tel" name="expiration" class="form-control small margin-top">
+                                    <input placeholder="CVC" type="number" name="cardCode" class="form-control small margin-top">
+                                </div>
+                            </div>
+                            <div class="section">
+                                <h3>Billing Information</h3>
+                                <input type="text" name="fname" class="form-control" style="width:49%; margin-right:2%; float:left;" placeholder="First Name" value='<?php echo Session::SessionFirstName()?>' required />
+                                <input type="text" name="lname" class="form-control" style="width:49%" placeholder="Last Name" value='<?php echo Session::SessionLastName()?>' required />
+                                <input type="text" name="company" class="form-control" style="width:100%; margin-top:10px; float:left;"  placeholder="Company Name"/>
+                                <input type="text" name="addy1" class="form-control" style="width:100%; margin-top:10px; float:left;" placeholder="Address" required />
+                                <input type="text" name="city" class="form-control" style="width:59%; margin-right:1%; margin-top:10px; float:left;" placeholder="City" required />
+                                <input type="text" name="state" class="form-control" style="width:19%; margin-right:1%; margin-top:10px; float:left;" placeholder="State" required />
+                                <input type="text" name="zip" class="form-control" style="width:20%; margin-top:10px; float:left;"placeholder="Zip Code" required />
+                            </div>
+                            <input type="submit" name="submit" value="Submit Payment" class="btn" style="background: red; color:white; float:right; width: 30%;"/>
+                        </form>
+                    </section>
+                </div>
+            </div>
+            <?php require_once(FOOTER); ?>
         </div>
-    </div>
     <script src="/public/javascript/card.js"></script>
     <script>
-        new Card({
+            new Card({
             form: document.querySelector('form'),
             container: '.card-wrapper'
         });
     </script>
-
-
-    <div id="section" style="border: 1px solid #0993; margin-bottom: 15px; padding: 7px;">
-        <h3>Billing Information</h3>
-
-        <table cellspacing="0">
-            <tr>
-                <td>
-                    <div class="label required">First Name:</div>
-                    <input type="text" name="fname" value='<?php echo Session::SessionFirstName()?>' required />
-                </td>
-                <td style="padding-right: 0">
-                    <div class="label required">Last Name</div>
-                    <input type="text" name="lname" value='<?php echo Session::SessionLastName()?>' required />
-                </td>
-            </tr>
-        </table>
-
-        <div class="label">Company</div>
-        <input type="text" name="company" />
-
-        <div class="label" style="font-weight: bold;">Address</div>
-        <input type="text" name="addy1" required="required" />
-        <input type="text" name="addy2" />
-
-        <table cellspacing="0">
-            <tr>
-                <td>
-                    <input type="text" name="city" />
-                </td>
-                <td>
-                    <input type="text" name="state" />
-                </td>
-                <td>
-                    <input type="text" name="zip" />
-                </td>
-            </tr>
-        </table>
-    </div>
-
-    <input type="submit" name="submit" value="Submit Payment" />
-</form>
-</section>
-<?php require_once '../includes/footer.php'; ?>
-</body>
+    </body>
 </html>

@@ -28,19 +28,19 @@ $controller = new FormPage();
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     $controller->Submit(
-       // $_POST["amount"], ADD THIS TO ORDER
-        $_POST['cardNum'],
-        $_POST['name'],
-        $_POST['cardCode'],
-        $_POST['expiration'],
-        $_POST['fname'],
-        $_POST['lname'],
-        $_POST['company'],
-        $_POST['addy1'],
-        $_POST['city'],
-        $_POST['state'],
-        $_POST['zip'],
-        $_POST['amount']
+       // WHILE THIS IS A SIMPLE WAY I KNOW THAT SANITIZING TAKES A LOT MORE. I WILL ADD TO THIS LATER
+        htmlspecialchars($_POST['cardNum']),
+        htmlspecialchars($_POST['name']),
+        htmlspecialchars($_POST['cardCode']),
+        htmlspecialchars($_POST['expiration']),
+        htmlspecialchars($_POST['fname']),
+        htmlspecialchars($_POST['lname']),
+        htmlspecialchars($_POST['company']),
+        htmlspecialchars($_POST['addy1']),
+        htmlspecialchars($_POST['city']),
+        htmlspecialchars($_POST['state']),
+        htmlspecialchars($_POST['zip']),
+        htmlspecialchars($_POST['amount'])
         );
 
 }

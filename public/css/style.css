@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
 body{
     margin: 0 0 0 0;
     font-family: 'Ubuntu', sans-serif;
@@ -15,12 +20,11 @@ header{
     background: dodgerblue;
     color: white;
     padding-left: 20px;
-    padding-top: 10px;
 }
 
 footer{
     height: 250px;
-    width:98%;
+    width:100%;
     background: #333;
     color: white;
     margin-top: 40px;
@@ -36,6 +40,23 @@ footer{
     font-family: 'Ubuntu', sans-serif;
     font-size:30px;
     color: white;
+}
+.form-container{
+    width:100%;
+    margin-top: 20px;
+}
+
+.small{
+    width:25%;
+    margin:10px auto 5px auto !important;
+}
+
+.section{
+    border: 1px solid #0993;
+    margin-bottom: 15px;
+    padding: 7px;
+    float:left;
+    width:100%;
 }
 
 ::-webkit-scrollbar {
