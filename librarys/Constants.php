@@ -13,8 +13,10 @@ const DS = DIRECTORY_SEPARATOR;
 const MODELS = [
     'USER' => APPLICATION_PATH . DS .'models'. DS .'User.php',
     'CREDITCARD' => APPLICATION_PATH . DS .'models'. DS .'CreditCard.php',
-    'SESSION' => APPLICATION_PATH . DS .'models'. DS .'Session.php'
-    ];
+    'SESSION' => APPLICATION_PATH . DS .'models'. DS .'Session.php',
+    'ORDER' => APPLICATION_PATH . DS .'models'. DS .'Order.php'
+
+];
 
 const CONTROLLERS = [
     'FORM' => APPLICATION_PATH . DS . 'controllers'. DS .'FormController.php',
@@ -29,3 +31,6 @@ const VIEWS = [
 const DATABASE = APPLICATION_PATH . DS .'librarys'. DS .'Database.php';
 
 const SESSION = APPLICATION_PATH . DS . 'models'. DS .'Session.php';
+
+const ENCRYPTIONKEY = 'THIS*would*N0T*b3*THe*B3ST*encyption*KeY@sItE*';
+CONST ENCRYPTIONIV = 'TEstingIV@1';

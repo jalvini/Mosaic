@@ -17,6 +17,8 @@ require_once ( SESSION );
 //GET MODEL, CONTROLLER
 require_once ( MODELS['USER'] );
 require_once ( MODELS['CREDITCARD'] );
+require_once ( MODELS['ORDER'] );
+
 require_once ( MODELS['SESSION'] );
 require_once  ( CONTROLLERS['FORM'] );
 
