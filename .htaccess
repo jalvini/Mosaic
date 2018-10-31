@@ -1,0 +1,6 @@
+RewriteEngine On
+
+#RewriteRule ^/?$ /public/$1
+
+RewriteRule ^CreditCardInfo/?$ /routes/FormRouter.php
+RewriteRule ^/?$ /routes/UserInfoRouter.php
