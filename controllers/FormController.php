@@ -11,12 +11,10 @@ class FormPage
 
     public function __construct()
     {
-        //WHEN USER COMES ON TO PAG CHECK IF USER FILLED OUT USER INFO IF NOT SEND THEM BACK
+        //WHEN USER COMES ON TO PAGE CHECK IF USER FILLED OUT USER INFO IF NOT SEND THEM BACK
         Session::Start();
-        if (session_status() == PHP_SESSION_ACTIVE) {
-            //echo Session::SessionFirstName();
-        } else {
-            header('Location: /CreditCardInfo');
+        if (!isset($_SESSION['first_name']) || !isset($_SESSION['last_name'])) {
+            header('Location: /');
         }
     }
 

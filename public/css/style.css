@@ -96,8 +96,60 @@ footer{
     background: #ff6926;
 }
 
+.first-name{
+    width:49%;
+    margin-right:2%;
+}
+
+.last-name{
+    width:49%;
+}
+
+.form-one-hundred{
+    width:100%;
+}
+
+.city{
+    width:59%;
+    margin-right:1%;
+}
+
+.state{
+    width:19%;
+    margin-right:1%;
+}
+
+.zip{
+    width:20%;
+}
 @media screen and (max-width: 600px) {
     footer{
         margin-top:200px;
+    }
+    .body2{
+        min-width: 328px;
+    }
+    .first-name{
+        width:100%;
+    }
+
+    .last-name{
+        width:100%;
+    }
+
+    .city{
+        width:100%;
+        margin-right:1%;
+    }
+
+    .state{
+        width:100%;
+    }
+
+    .zip{
+        width:100%;
+    }
+    .small{
+        width:100%;
     }
 }
