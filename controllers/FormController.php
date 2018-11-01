@@ -20,6 +20,7 @@ class FormPage
 
     public function Submit($ccNumber, $cardOwner, $cardCode, $expiration, $first, $last, $comp, $add, $city, $state, $zip, $price)
     {
+        //CALL CREDIT CARD, USER AND ORDER INFO
         $creditCard = new CreditCard();
         $user = new User();
         $order = new Order();

@@ -41,6 +41,7 @@
             </div>
             <?php require_once(FOOTER); ?>
         </div>
+    <!-- JAVASCRIPT THAT CALLS NIFTY CREDIT CARD GRAPHICS-->
     <script src="/public/javascript/card.js"></script>
     <script>
             new Card({

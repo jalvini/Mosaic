@@ -7,17 +7,3 @@
     <link rel="stylesheet" type="text/css" href="../public/css/card.css">
 
     <link rel="stylesheet" type="text/css" href="../public/css/style.css">
-
-    <style type="text/css">
-        .instructions {
-            font-style: italic;
-        }
-
-        table td {
-            padding-right: 10px;
-        }
-
-        .required {
-            font-weight: bold;
-        }
-    </style>

@@ -8,11 +8,11 @@
 class CreditCard extends Database
 {
 
-    private $ccNumber; //CREDIT CARD NUMBER
+    private $ccNumber; // CREDIT CARD NUMBER
     private $cardOwner; // NAME OF USER ALSO THIS WILL MAKE A GOOD JOIN POINT FOR THE USER TABLE
     private $cardCode; // CREDIT CARD EXPIRATION DATE
     private $expiration; // CREDIT CARD EXPIRATION MONTH
-    public $onFile;
+    public $onFile; // CHECKS IF CREDIT CARD IS ON FILE
     public function setCCInfo($ccNumber, $cardOwner, $cardCode, $expiration){
         $this->ccNumber = $ccNumber;
         $this->cardOwner = $cardOwner;
