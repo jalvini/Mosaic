@@ -12,7 +12,7 @@ require_once ('../librarys/Constants.php');
 //GET DATABASE
 require_once ( DATABASE );
 
-//GET DATABASE
+//GET SESSION
 require_once ( SESSION );
 
 //GET MODEL, CONTROLLER

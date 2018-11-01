@@ -1,4 +1,5 @@
 RewriteEngine On
 
+#EACH URL GETS REDIRECTED
 RewriteRule ^CreditCardInfo/?$ /routes/FormRouter.php
 RewriteRule ^/?$ /routes/UserInfoRouter.php
