@@ -8,7 +8,7 @@
         <?php require_once(HEADER); ?>
             <div class="row">
                 <div class="col-lg">
-                    <section id="body">
+                    <section class="body2">
                         <h1>Payment Information</h1>
                         <div class="instructions">Please, fill out the following form to submit your payment.</div>
                         <?php echo $controller->message != NULL ? $controller->message : false ?>

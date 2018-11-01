@@ -36,6 +36,10 @@ footer{
     margin-top:80px;
 }
 
+.body2{
+    margin-top:80px;
+}
+
 #logo{
     font-family: 'Ubuntu', sans-serif;
     font-size:30px;
@@ -90,4 +94,10 @@ footer{
 
 ::-webkit-scrollbar-thumb:hover {
     background: #ff6926;
+}
+
+@media screen and (max-width: 600px) {
+    footer{
+        margin-top:200px;
+    }
 }
