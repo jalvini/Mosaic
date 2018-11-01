@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <?php require_once('../includes/tags.php'); ?>
 </head>
 <body>
 <div class="container-fluid">
     <?php require_once(HEADER); ?>
     <div class="row">
-        <div class="col-12 col-sm-12 col-md-5">
+        <div class="col-12 col-md-5">
             <section class="body">
                 <div class="section">
                     <form method="post">
@@ -21,7 +23,7 @@
                 </div>
             </section>
         </div>
-        <div class="col-12 col-sm-12 col-md-7">
+        <div class="col-12 col-md-7">
             <section class="body">
                 <div class="section" style="padding-bottom:50px; margin-bottom:120px;">
                     <h2>Sample Item</h2>
