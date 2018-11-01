@@ -26,13 +26,13 @@
                             </div>
                             <div class="section">
                                 <h3>Billing Information</h3>
-                                <input type="text" name="fname" class="form-control" style="width:49%; margin-right:2%; float:left;" placeholder="First Name" value='<?php echo Session::SessionFirstName()?>' required />
-                                <input type="text" name="lname" class="form-control" style="width:49%" placeholder="Last Name" value='<?php echo Session::SessionLastName()?>' required />
-                                <input type="text" name="company" class="form-control" style="width:100%; margin-top:10px; float:left;"  placeholder="Company Name"/>
-                                <input type="text" name="addy1" class="form-control" style="width:100%; margin-top:10px; float:left;" placeholder="Address" required />
-                                <input type="text" name="city" class="form-control" style="width:59%; margin-right:1%; margin-top:10px; float:left;" placeholder="City" required />
-                                <input type="text" name="state" class="form-control" style="width:19%; margin-right:1%; margin-top:10px; float:left;" placeholder="State" required />
-                                <input type="text" name="zip" class="form-control" style="width:20%; margin-top:10px; float:left;"placeholder="Zip Code" required />
+                                <input type="text" name="fname" class="form-control form-two" style="width:49%; margin-right:2%; float:left;" placeholder="First Name" value='<?php echo Session::SessionFirstName()?>' required />
+                                <input type="text" name="lname" class="form-control form-two" style="width:49%" placeholder="Last Name" value='<?php echo Session::SessionLastName()?>' required />
+                                <input type="text" name="company" class="form-control form-two" style="width:100%;"  placeholder="Company Name"/>
+                                <input type="text" name="addy1" class="form-control form-two" style="width:100%;" placeholder="Address" required />
+                                <input type="text" name="city" class="form-control form-two" style="width:59%; margin-right:1%;" placeholder="City" required />
+                                <input type="text" name="state" class="form-control form-two" style="width:19%; margin-right:1%;" placeholder="State" required />
+                                <input type="text" name="zip" class="form-control form-two" style="width:20%;" placeholder="Zip Code" required />
                             </div>
                             <input type="submit" name="submit" value="Submit Payment" class="btn" style="background: red; color:white; float:right; width: 30%;"/>
                         </form>
