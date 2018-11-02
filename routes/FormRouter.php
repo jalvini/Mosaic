@@ -14,13 +14,19 @@ require_once ( DATABASE );
 //GET SESSION
 require_once ( SESSION );
 
-//GET MODEL, CONTROLLER
+//GET MODEL, CONTROLLER AND FACTORYS
+
 require_once ( MODELS['USER'] );
 require_once ( MODELS['CREDITCARD'] );
 require_once ( MODELS['ORDER'] );
-
 require_once ( MODELS['SESSION'] );
+require_once( FACTORYS['USER'] );
+require_once( FACTORYS['CREDITCARD'] );
+require_once( FACTORYS['ORDER'] );
 require_once  ( CONTROLLERS['FORM'] );
+
+//CALL MAIN CONTROLLER METHOD
+FormPage::main();
 
 //CONTROLLER IS CREATED
 $controller = new FormPage();

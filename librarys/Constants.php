@@ -17,6 +17,12 @@ const MODELS = [
 
 ];
 
+const FACTORYS = [
+    'USER' => APPLICATION_PATH . DS .'factory'. DS .'UserFactory.php',
+    'CREDITCARD' => APPLICATION_PATH . DS .'factory'. DS .'CreditCardFactory.php',
+    'ORDER' => APPLICATION_PATH . DS .'factory'. DS .'OrderFactory.php'
+];
+
 const CONTROLLERS = [
     'FORM' => APPLICATION_PATH . DS . 'controllers'. DS .'FormController.php',
     'USERINFO' => APPLICATION_PATH . DS . 'controllers'. DS .'UserInfoController.php'
@@ -34,8 +40,11 @@ const SESSION = APPLICATION_PATH . DS . 'models'. DS .'Session.php';
 const INCLUDES = APPLICATION_PATH . DS . 'includes' . DS;
 
 const HEADER = INCLUDES . 'header.php';
+
 const FOOTER = INCLUDES . 'footer.php';
+
 const TAGS = INCLUDES . 'tags.php';
 
 const ENCRYPTIONKEY = 'THIS*would*N0T*b3*THe*B3ST*encyption*KeY@sItE*';
+
 const ENCRYPTIONIV = 'TEstingIV@1';

@@ -13,12 +13,15 @@ class CreditCard extends Database
     private $cardCode; // CREDIT CARD EXPIRATION DATE
     private $expiration; // CREDIT CARD EXPIRATION MONTH
     public $onFile; // CHECKS IF CREDIT CARD IS ON FILE
-    public function setCCInfo($ccNumber, $cardOwner, $cardCode, $expiration){
+
+    public function __construct($ccNumber, $cardOwner, $cardCode, $expiration){
         $this->ccNumber = $ccNumber;
         $this->cardOwner = $cardOwner;
         $this->cardCode = $cardCode;
         $this->expiration = $expiration;
+    }
 
+    public function setCCInfo(){
         $stmt = $this->Connect()->prepare("INSERT INTO creditcard (ccNumber, Owner, Code, expiration) VALUES (?,?,?,?)");
         $stmt->execute([$this->ccNumber, $this->cardOwner, $this->cardCode, $this->expiration]);
     }

@@ -15,7 +15,7 @@ class User extends Database
     public $state;
     public $zip;
 
-    public function setUser($firstName, $lastName, $company, $address, $city, $state, $zip){
+    public function __construct($firstName, $lastName, $company, $address, $city, $state, $zip){
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->company = $company;
@@ -23,7 +23,9 @@ class User extends Database
         $this->city = $city;
         $this->state = $state;
         $this->zip = $zip;
+    }
 
+    public function setUser(){
         $stmt = $this->Connect()->prepare("INSERT INTO users (FirstName, LastName, Company, Address, City, State, Zip) VALUES (?,?,?,?,?,?,?)");
         $stmt->execute([$this->firstName, $this->lastName, $this->company, $this->address, $this->city, $this->state, $this->zip]);
     }

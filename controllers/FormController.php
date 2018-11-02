@@ -9,7 +9,7 @@ class FormPage
 {
     public $message;
 
-    public function __construct()
+    public static function main()
     {
         //WHEN USER COMES ON TO PAGE CHECK IF USER FILLED OUT USER INFO IF NOT SEND THEM BACK
         Session::Start();
@@ -20,21 +20,22 @@ class FormPage
 
     public function Submit($ccNumber, $cardOwner, $cardCode, $expiration, $first, $last, $comp, $add, $city, $state, $zip, $price)
     {
-        //CALL CREDIT CARD, USER AND ORDER INFO
-        $creditCard = new CreditCard();
-        $user = new User();
-        $order = new Order();
-        $creditCard->getCCInfo($this->Encrypt($ccNumber));
+        //SAMPLE ITEM NORMALLY WOULD BE INSIDE OF INPUT BUT FOR SIMPLICITY I ADDED IT HERE AS A VAR
         $item = 'Sample Item';
+        //CALL CREDIT CARD, USER AND ORDER INFO
+        $creditCard = CreditCardFactory::create($this->Encrypt($ccNumber), $cardOwner, $cardCode, $expiration);
+        $user = UserFactory::create($first, $last, $comp, $add, $city, $state, $zip);
+        $order = OrderFactory::create($item, $price, $first, $last);
 
+        $creditCard->getCCInfo($this->Encrypt($ccNumber));
         //SUBMIT FORM AND CHECK FOR POTENTIAL ERRORS. THIS IS A VERY QUICKLY PUT TOGETHER ERROR CHECKER. IT COULD BE BETTER
         if (strlen($ccNumber) < 16 || $cardOwner == NULL || strlen($cardCode) !== 3) {
             $this->message = 'You Have Entered Invalid Credit Card Information. Please Try Re-Entering Your Info';
         } else {
             if ($creditCard->onFile == NULL) {
-                $user->setUser($first, $last, $comp, $add, $city, $state, $zip);
-                $order->setOrder($item, $price, $first, $last);
-                $creditCard->setCCInfo($this->Encrypt($ccNumber), $cardOwner, $cardCode, $expiration);
+                $user->setUser();
+                $order->setOrder();
+                $creditCard->setCCInfo();
                 $this->message = 'Your Order Has Been Placed';
             } else {
                 $this->message = 'This Credit Card Is Already On File. Please Login!';
@@ -42,7 +43,7 @@ class FormPage
         }
         return $this->message;
     }
-    //NOT EVEn CLOSE TO THE BEST WAY TO ENCRYPT BUT WILL WORK TO SHOW I KNOW THAT IT NEDS TO BE ENCRYPTED
+    //NOT EVEN CLOSE TO THE BEST WAY TO ENCRYPT BUT WILL WORK TO SHOW I KNOW THAT IT NEDS TO BE ENCRYPTED
     private function Encrypt($data){
         $encryptionMethod = "AES-256-CBC";
         $secretKey = ENCRYPTIONKEY;

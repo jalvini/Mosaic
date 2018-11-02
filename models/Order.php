@@ -12,12 +12,14 @@ class Order extends Database
     protected $firstName;
     protected $lastName;
 
-    public function setOrder($orderItem, $orderPrice, $firstName, $lastName){
+    public function __construct($orderItem, $orderPrice, $firstName, $lastName){
         $this->orderItem = $orderItem;
         $this->orderPrice = $orderPrice;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
+    }
 
+    public function setOrder(){
         $stmt = $this->Connect()->prepare("INSERT INTO Orders (Item, Price, FirstName, LastName) VALUES (?,?,?,?)");
         $stmt->execute([$this->orderItem, $this->orderPrice, $this->firstName, $this->lastName]);
     }

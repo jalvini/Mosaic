@@ -16,6 +16,7 @@ require_once ( DATABASE );
 require_once ( SESSION );
 
 //GET MODEL, CONTROLLER
+
 require_once ( MODELS['SESSION'] );
 require_once  ( CONTROLLERS['USERINFO'] );
 
