@@ -18,9 +18,9 @@ const MODELS = [
 ];
 
 const FACTORYS = [
-    'USER' => APPLICATION_PATH . DS .'factory'. DS .'UserFactory.php',
-    'CREDITCARD' => APPLICATION_PATH . DS .'factory'. DS .'CreditCardFactory.php',
-    'ORDER' => APPLICATION_PATH . DS .'factory'. DS .'OrderFactory.php'
+    'USER' => APPLICATION_PATH . DS .'factorys'. DS .'UserFactory.php',
+    'CREDITCARD' => APPLICATION_PATH . DS .'factorys'. DS .'CreditCardFactory.php',
+    'ORDER' => APPLICATION_PATH . DS .'factorys'. DS .'OrderFactory.php'
 ];
 
 const CONTROLLERS = [
