@@ -8,8 +8,10 @@
 class FormPage
 {
     public $message;
+    private $month;
+    private $year;
 
-    public static function main()
+    public static function Main()
     {
         //WHEN USER COMES ON TO PAGE CHECK IF USER FILLED OUT USER INFO IF NOT SEND THEM BACK
         Session::Start();
@@ -22,12 +24,24 @@ class FormPage
     {
         //SAMPLE ITEM NORMALLY WOULD BE INSIDE OF INPUT BUT FOR SIMPLICITY I ADDED IT HERE AS A VAR
         $item = 'Sample Item';
+
+        //GET CURRENT MONTH AND YEAR
+        $currentMonth = date("m");
+        $currentYear = date("y");
+
         //CALL CREDIT CARD, USER AND ORDER INFO
         $creditCard = CreditCardFactory::create($this->Encrypt($ccNumber), $cardOwner, $cardCode, $expiration);
         $user = UserFactory::create($first, $last, $comp, $add, $city, $state, $zip);
         $order = OrderFactory::create($item, $price, $first, $last);
 
         $creditCard->getCCInfo($this->Encrypt($ccNumber));
+        $this->SplitDate($expiration);
+
+        //IF MONTH OR YEAR COMES BACK LESS THAN CURRENT DATE RETURN CARD IS EXPIRED
+        if($this->month < $currentMonth && $this->year <= $currentYear || $this->year < $currentYear){
+            return $this->message = 'Card Is Expired';
+        }
+
         //SUBMIT FORM AND CHECK FOR POTENTIAL ERRORS. THIS IS A VERY QUICKLY PUT TOGETHER ERROR CHECKER. IT COULD BE BETTER
         if (strlen($ccNumber) < 16 || $cardOwner == NULL || strlen($cardCode) !== 3) {
             $this->message = 'You Have Entered Invalid Credit Card Information. Please Try Re-Entering Your Info';
@@ -65,5 +79,11 @@ class FormPage
         $output = openssl_decrypt(base64_decode($data), $encryptionMethod, $key, 0, $iv);
 
         return($output);
+    }
+
+    private function SplitDate($date){
+        $get = explode(' / ',$date);
+        $this->month = $get[0];
+        $this->year = $get[1];
     }
 }

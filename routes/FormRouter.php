@@ -26,7 +26,7 @@ require_once( FACTORYS['ORDER'] );
 require_once  ( CONTROLLERS['FORM'] );
 
 //CALL MAIN CONTROLLER METHOD
-FormPage::main();
+FormPage::Main();
 
 //CONTROLLER IS CREATED
 $controller = new FormPage();
