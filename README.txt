@@ -30,8 +30,7 @@ While I know my code is far from perfect I just wanted to give s small example o
 
 ************************************************USER ACTIVITY  DIAGRAM*******************************************************
 
-![alt text](https://image.ibb.co/h97Tq0/Flow-Chart.jpg)
-
+![Alt text](https://image.ibb.co/h97Tq0/Flow-Chart.jpg "Optional title")
 
 THE CODE BELOW IS NOT MY CODE. TO VIEW MY CODE PLEASE VIEW THE REPO. THIS IS THE ORIGINAL CODE INCLUDED AS A REFERENCE.
 
