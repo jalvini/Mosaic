@@ -9,7 +9,7 @@
 require_once ('../librarys/Constants.php');
 
 //GET DATABASE
-require_once ( DATABASE );
+require_once ( SINGLETONS['DATABASE'] );
 
 //GET SESSION
 require_once ( SESSION );

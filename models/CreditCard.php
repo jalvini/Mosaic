@@ -22,7 +22,7 @@ class CreditCard extends Database
     }
 
     public function setCCInfo(){
-        $stmt = $this->Connect()->prepare("INSERT INTO creditcard (ccNumber, Owner, Code, expiration) VALUES (?,?,?,?)");
+        $stmt = Database::getInstance()->prepare("INSERT INTO creditcard (ccNumber, Owner, Code, expiration) VALUES (?,?,?,?)");
         $stmt->execute([$this->ccNumber, $this->cardOwner, $this->cardCode, $this->expiration]);
     }
 
@@ -33,7 +33,7 @@ class CreditCard extends Database
     public function getCCInfo($ccNumber){
         $this->ccNumber = $ccNumber;
         $this->onFile = Null;
-        $stmt = $this->Connect()->prepare("SELECT Owner FROM creditcard WHERE ccnumber =:condition");
+        $stmt = Database::getInstance()->prepare("SELECT Owner FROM creditcard WHERE ccnumber =:condition");
         $stmt->bindParam(':condition', $this->ccNumber);
         $stmt->execute(array(':condition' => $this->ccNumber));
         $this->onFile = $stmt->fetch();

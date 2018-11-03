@@ -15,13 +15,13 @@ const MODELS = [
     'SESSION' => APPLICATION_PATH . DS .'models'. DS .'Session.php',
     'ORDER' => APPLICATION_PATH . DS .'models'. DS .'Order.php'
 
-];
+    ];
 
 const FACTORYS = [
     'USER' => APPLICATION_PATH . DS .'factorys'. DS .'UserFactory.php',
     'CREDITCARD' => APPLICATION_PATH . DS .'factorys'. DS .'CreditCardFactory.php',
     'ORDER' => APPLICATION_PATH . DS .'factorys'. DS .'OrderFactory.php'
-];
+    ];
 
 const CONTROLLERS = [
     'FORM' => APPLICATION_PATH . DS . 'controllers'. DS .'FormController.php',
@@ -30,11 +30,15 @@ const CONTROLLERS = [
 
 const ABSTRACTS = [
     'PERSON' => APPLICATION_PATH . DS . 'abstracts'. DS .'Person.php'
-];
+    ];
 
 const VIEWS = [
     'FORM' => APPLICATION_PATH . DS .'views'. DS .'Form.php',
     'USERINFO' => APPLICATION_PATH . DS .'views'. DS .'UserInfo.php'
+    ];
+
+const SINGLETONS = [
+    'DATABASE' => APPLICATION_PATH . DS . 'singletons'. DS .'Database.php'
     ];
 
 const DATABASE = APPLICATION_PATH . DS .'librarys'. DS .'Database.php';

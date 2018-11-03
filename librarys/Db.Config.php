@@ -6,7 +6,8 @@
  */
 
 CONST SERVERNAME = 'localhost';
+CONST PORT = '3306';
 CONST DBNAME = 'mosaic';
 CONST DBUSERNAME = 'root';
 CONST DBPASSWORD = '';
-//CONST DBCHARSET = 'utf8';
+CONST DBCHARSET = 'utf8';

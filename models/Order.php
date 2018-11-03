@@ -18,7 +18,7 @@ class Order extends Person
     }
 
     public function setOrder(){
-        $stmt = Database::Connect()->prepare("INSERT INTO Orders (Item, Price, FirstName, LastName) VALUES (?,?,?,?)");
+        $stmt = Database::getInstance()->prepare("INSERT INTO Orders (Item, Price, FirstName, LastName) VALUES (?,?,?,?)");
         $stmt->execute([$this->orderItem, $this->orderPrice, $this->firstName, $this->lastName]);
     }
 }
