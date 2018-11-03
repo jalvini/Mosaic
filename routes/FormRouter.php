@@ -14,8 +14,8 @@ require_once ( DATABASE );
 //GET SESSION
 require_once ( SESSION );
 
-//GET MODEL, CONTROLLER AND FACTORYS
-
+//GET MODEL, CONTROLLER FACTORYS AND ABSTRACTS
+require_once ( ABSTRACTS['PERSON'] );
 require_once ( MODELS['USER'] );
 require_once ( MODELS['CREDITCARD'] );
 require_once ( MODELS['ORDER'] );

@@ -1,40 +1,38 @@
-First and Foremost, the code should be object oriented. So, my example in this repo is how I would change the code to improve
-functionality and readability.
+*******************************************REASONS ORIGINAL CODE IS NOT CORRECT***************************************************
+
+First and Foremost, the code should be inplemented with an OO (Object Oriented) design pattern. So, my example in this repo is how I would change the code to improve functionality and readability.
 
 The developer didn't produce any type of form validation on the backend. My form validation is minimal and can be improved upon
 but in a production environment I would sanitize and check against every variable.
 
-
 Another important point to mention is that the developer is using deprecated mysql parameters inside of their statements an updated
-version is mysqli. I find mysqli to be cumbersome, so I prefer using PDO.
+version is mysqli. I find mysqli to be a bit outgunned by PDO (for now), so I prefer using PDO.
 
-The Developer never checked any data before entering it into the database. This can cause many problems. Again, in my code I did not check
-the data as much as I should have but again this is just a sample and in a production environment I would not do this.
+The Developer never checked any data before entering it into the database. This can cause many problems. Again, in my code I did not check the data as much as I should have but again this is just a sample and in a production environment I would not do this.
 
-Which brings me to my next point, at the very least the dev should have used prepared statements to protect against SQL injections. I use
-prepared statements regardless of whether I am working in a testing or production environment because they are very easy to use and should
-never be disregarded or put off until later. SQL injections are a serious attack that can cost people their identity and cost the company
-a lot of money.
+Which brings me to my next point, at the very least the dev should have used prepared statements to protect against SQL injections. I use prepared statements regardless of whether I am working in a testing or production environment because they are very easy to use and should never be disregarded or put off until later. SQL injections are a serious attack that can cost people their identity and cost the company a lot of money.
 
-A big red flag that comes up inside of this code is the fact that CC info is being saved as plain text. That alone could be devastating to
-any company but coupled with the notes above would almost ensure a company being sued out of existence from disgruntled customers whom
-had their CC info stolen.
+A big red flag that comes up inside of this code is the fact that CC info is being saved as clear text. That alone could be devastating to any company but coupled with the notes above would almost ensure a company being sued out of existence from disgruntled customers whom had their CC info stolen.
 
 The developer is using tables. While some still use tables to layout data, DIVS are easier to work with and scale much easier to different devices
 
 The developer has many grammatical errors such as _Session which are easy enough to debug but can still be an issue.
 
+My final note is that this code is a classic example of spaghetti code. This is common among newer PHP developers. PHP is a very forgiving language and very easy to develop bad habits in. I personally faced a bigger struggle when moving on to other programming languages because my first language was PHP. During my time using it I developed bad habits which I later broke out of but nonetheless it was difficult.
 
-My final note is that this code is a classic example of spaghetti code. This is common among newer PHP developers. PHP is a very forgiving
-language and very easy to develop bad habits in. I personally faced a bigger struggle when moving on to other programming languages
-because my first language was PHP. During my time using it I developed bad habits which I later broke out of but nonetheless it was difficult.
 My advice to people who are beginners and just learning to write code is to not start with PHP and looking at this code is a classic example why.
 
-*******NOTES FOR MY CODE********
+**************************************************CODE NOTES***************************************************************
 
-While I know my code is far from perfect I just wanted to give s small example of how I write code. This code is far from production ready.
-I just wanted to show how enthusiastic I am about what I do and give you guys a small interpretation of my programming style.
+While I know my code is far from perfect I just wanted to give s small example of how I write code. This code is far from production ready. I just wanted to show how enthusiastic I am about what I do and give you guys a small interpretation of my programming style.
 
+
+
+THE CODE BELOW IS NOT MY CODE. TO VIEW MY CODE PLEASE VIEW THE REPO. THIS IS THE ORIGINAL CODE INCLUDED AS A REFERENCE.
+
+****************************************************************************************************************************
+
+******************************************************ORIGINAL CODE**********************************************************
 
 <?php
 /* Display a form to the user, and process their submission for credit card payment. */

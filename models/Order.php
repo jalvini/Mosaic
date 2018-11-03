@@ -5,12 +5,10 @@
  * Time: 08:29 AM
  */
 
-class Order extends Database
+class Order extends Person
 {
     protected $orderItem;
     protected $orderPrice;
-    protected $firstName;
-    protected $lastName;
 
     public function __construct($orderItem, $orderPrice, $firstName, $lastName){
         $this->orderItem = $orderItem;
@@ -20,7 +18,7 @@ class Order extends Database
     }
 
     public function setOrder(){
-        $stmt = $this->Connect()->prepare("INSERT INTO Orders (Item, Price, FirstName, LastName) VALUES (?,?,?,?)");
+        $stmt = Database::Connect()->prepare("INSERT INTO Orders (Item, Price, FirstName, LastName) VALUES (?,?,?,?)");
         $stmt->execute([$this->orderItem, $this->orderPrice, $this->firstName, $this->lastName]);
     }
 }

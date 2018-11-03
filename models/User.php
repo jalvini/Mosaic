@@ -5,10 +5,8 @@
  * Time: 05:44 PM
  */
 
-class User extends Database
+class User extends Person
 {
-    public $firstName;
-    public $lastName;
     public $company;
     public $address;
     public $city;
@@ -26,7 +24,7 @@ class User extends Database
     }
 
     public function setUser(){
-        $stmt = $this->Connect()->prepare("INSERT INTO users (FirstName, LastName, Company, Address, City, State, Zip) VALUES (?,?,?,?,?,?,?)");
+        $stmt = Database::Connect()->prepare("INSERT INTO users (FirstName, LastName, Company, Address, City, State, Zip) VALUES (?,?,?,?,?,?,?)");
         $stmt->execute([$this->firstName, $this->lastName, $this->company, $this->address, $this->city, $this->state, $this->zip]);
     }
 

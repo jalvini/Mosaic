@@ -10,7 +10,7 @@ class Database
 {
     protected $con;
 
-    protected static function Connect(){
+    public static function Connect(){
         try {
             $dsn = 'mysql:host=' . SERVERNAME . ';dbname=' . DBNAME . ';';
             $opt = [

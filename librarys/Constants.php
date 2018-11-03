@@ -28,6 +28,10 @@ const CONTROLLERS = [
     'USERINFO' => APPLICATION_PATH . DS . 'controllers'. DS .'UserInfoController.php'
     ];
 
+const ABSTRACTS = [
+    'PERSON' => APPLICATION_PATH . DS . 'abstracts'. DS .'Person.php'
+];
+
 const VIEWS = [
     'FORM' => APPLICATION_PATH . DS .'views'. DS .'Form.php',
     'USERINFO' => APPLICATION_PATH . DS .'views'. DS .'UserInfo.php'
