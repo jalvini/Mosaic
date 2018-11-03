@@ -1,4 +1,4 @@
-*******************************************REASONS ORIGINAL CODE IS NOT CORRECT***************************************************
+## REASONS ORIGINAL CODE IS NOT CORRECT
 
 First and Foremost, the code should be implemented with an OO (Object Oriented) design pattern. So, my example in this repo is how I would change the code to improve functionality and readability.
 
@@ -22,18 +22,23 @@ My final note is that this code is a classic example of spaghetti code. This is 
 
 My advice to people who are beginners and just learning to write code is to not start with PHP and looking at this code is a classic example why.
 
-**************************************************CODE NOTES***************************************************************
+## CODE NOTES
 
-While I know my code is far from perfect I just wanted to give s small example of how I write code. This code is far from production ready. I just wanted to show how enthusiastic I am about what I do and give you guys a small interpretation of my programming style.
+While I know my code is far from perfect I just wanted to give a small example of how I write code. This code is far from production ready. I just wanted to show how enthusiastic I am about what I do and give you guys a small interpretation of my programming style.
+
+
+
+## User Activity Diagram
+![alt text](https://image.ibb.co/h97Tq0/Flow-Chart.jpg "Logo Title Text 1")
+
 
 
 
 THE CODE BELOW IS NOT MY CODE. TO VIEW MY CODE PLEASE VIEW THE REPO. THIS IS THE ORIGINAL CODE INCLUDED AS A REFERENCE.
 
-****************************************************************************************************************************
 
-******************************************************ORIGINAL CODE**********************************************************
-
+## ORIGINAL CODE
+```
 <?php
 /* Display a form to the user, and process their submission for credit card payment. */
 
@@ -187,3 +192,4 @@ if (isset($_POST["submit"])) {
 	<?php require 'footer.php'; ?>
 </body>
 </html>
+```
