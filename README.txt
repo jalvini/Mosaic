@@ -1,6 +1,6 @@
 *******************************************REASONS ORIGINAL CODE IS NOT CORRECT***************************************************
 
-First and Foremost, the code should be inplemented with an OO (Object Oriented) design pattern. So, my example in this repo is how I would change the code to improve functionality and readability.
+First and Foremost, the code should be implemented with an OO (Object Oriented) design pattern. So, my example in this repo is how I would change the code to improve functionality and readability.
 
 The developer didn't produce any type of form validation on the backend. My form validation is minimal and can be improved upon
 but in a production environment I would sanitize and check against every variable.
