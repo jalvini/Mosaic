@@ -1,7 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Joseph Alvini
+ * Author: Joseph Alvini
  * Date: 11/01/18
  * Time: 11:41 PM
  */
