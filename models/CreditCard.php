@@ -5,7 +5,7 @@
  * Time: 08:13 AM
  */
 
-class CreditCard extends Database
+class CreditCard
 {
 
     private $ccNumber; // CREDIT CARD NUMBER
