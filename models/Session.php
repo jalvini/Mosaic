@@ -13,7 +13,6 @@ class Session
     public static function SetSessionName($firstName, $lastName){
         $_SESSION["first_name"] = $firstName;
         $_SESSION["last_name"] = $lastName;
-        print_r($_SESSION);
     }
 
     public static function SessionFirstName(){
