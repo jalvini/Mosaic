@@ -31,7 +31,6 @@ class FormPage
 
         //CALL CREDIT CARD, USER AND ORDER INFO
         $creditCard = CreditCardFactory::create($this->Encrypt($ccNumber), $cardOwner, $cardCode, $expiration);
-        $user = UserFactory::create($first, $last, $comp, $add, $city, $state, $zip);
         $order = OrderFactory::create($item, $price, $first, $last);
 
         $creditCard->getCCInfo($this->Encrypt($ccNumber));
@@ -47,7 +46,8 @@ class FormPage
             $this->message = 'You Have Entered Invalid Credit Card Information. Please Try Re-Entering Your Info';
         } else {
             if ($creditCard->onFile == NULL) {
-                $user->setUser();
+                $user = UserBuilder::create(new User,$first, $last, $comp, $add, $city, $state, $zip);
+                var_dump($user);
                 $order->setOrder();
                 $creditCard->setCCInfo();
                 $this->message = 'Your Order Has Been Placed';
@@ -57,6 +57,7 @@ class FormPage
         }
         return $this->message;
     }
+
     //NOT EVEN CLOSE TO THE BEST WAY TO ENCRYPT BUT WILL WORK TO SHOW I KNOW THAT IT NEDS TO BE ENCRYPTED
     private function Encrypt($data){
         $encryptionMethod = "AES-256-CBC";

@@ -9,16 +9,20 @@ defined('APPLICATION_PATH') || define('APPLICATION_PATH', realpath(dirname(__FIL
 
 const DS = DIRECTORY_SEPARATOR;
 
+const INTERFACES = ['USER' => APPLICATION_PATH . DS .'interfaces'. DS .'UserInterface.php'];
+
+const BUILDERS  = ['USER' => APPLICATION_PATH . DS .'builders'. DS .'UserBuilder.php'];
+
+const PARENTS = ['USER' => APPLICATION_PATH . DS .'parents'. DS .'UserParent.php'];
+
 const MODELS = [
     'USER' => APPLICATION_PATH . DS .'models'. DS .'User.php',
     'CREDITCARD' => APPLICATION_PATH . DS .'models'. DS .'CreditCard.php',
     'SESSION' => APPLICATION_PATH . DS .'models'. DS .'Session.php',
     'ORDER' => APPLICATION_PATH . DS .'models'. DS .'Order.php'
-
     ];
 
 const FACTORYS = [
-    'USER' => APPLICATION_PATH . DS .'factorys'. DS .'UserFactory.php',
     'CREDITCARD' => APPLICATION_PATH . DS .'factorys'. DS .'CreditCardFactory.php',
     'ORDER' => APPLICATION_PATH . DS .'factorys'. DS .'OrderFactory.php'
     ];
@@ -28,9 +32,6 @@ const CONTROLLERS = [
     'USERINFO' => APPLICATION_PATH . DS . 'controllers'. DS .'UserInfoController.php'
     ];
 
-const ABSTRACTS = [
-    'PERSON' => APPLICATION_PATH . DS . 'abstracts'. DS .'Person.php'
-    ];
 
 const VIEWS = [
     'FORM' => APPLICATION_PATH . DS .'views'. DS .'Form.php',

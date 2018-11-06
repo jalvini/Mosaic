@@ -5,27 +5,45 @@
  * Time: 05:44 PM
  */
 
-class User extends Person
+class User  extends UserParent implements UserInterface
 {
-    public $company;
-    public $address;
-    public $city;
-    public $state;
-    public $zip;
-
-    public function __construct($firstName, $lastName, $company, $address, $city, $state, $zip){
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
-        $this->company = $company;
-        $this->address = $address;
-        $this->city = $city;
-        $this->state = $state;
-        $this->zip = $zip;
+    public function __construct(){
+        $this->user = new UserParent();
     }
 
-    public function setUser(){
+    public function setFirstName($firstName){
+        $this->user->firstName = $firstName;
+    }
+
+    public function setLastName($lastName){
+        $this->user->lastName = $lastName;
+    }
+
+    public function setCompany($company){
+        $this->user->company = $company;
+    }
+
+    public function setAddress($address){
+        $this->user->address = $address;
+    }
+
+    public function setCity($city){
+        $this->user->city = $city;
+    }
+
+    public function setState($state){
+        $this->user->state = $state;
+    }
+
+    public function setZip($zip){
+        $this->user->zip = $zip;
+    }
+    public function storeUser(){
         $stmt = Database::getInstance()->prepare("INSERT INTO users (FirstName, LastName, Company, Address, City, State, Zip) VALUES (?,?,?,?,?,?,?)");
-        $stmt->execute([$this->firstName, $this->lastName, $this->company, $this->address, $this->city, $this->state, $this->zip]);
+        $stmt->execute([$this->user->firstName, $this->user->lastName, $this->user->company, $this->user->address, $this->user->city, $this->user->state, $this->user->zip]);
     }
 
+    public function getUser(){
+        return $this->user;
+    }
 }

@@ -14,13 +14,16 @@ require_once ( SINGLETONS['DATABASE'] );
 //GET SESSION
 require_once ( SESSION );
 
-//GET MODEL, CONTROLLER FACTORYS AND ABSTRACTS
-require_once ( ABSTRACTS['PERSON'] );
-require_once ( MODELS['USER'] );
+//GET MODEL, CONTROLLER FACTORYS AND INTERFACES
+require_once(INTERFACES['USER']);
+require_once(BUILDERS['USER']);
+require_once(PARENTS['USER']);
+require_once(MODELS['USER']);
+
+
 require_once ( MODELS['CREDITCARD'] );
 require_once ( MODELS['ORDER'] );
 require_once ( MODELS['SESSION'] );
-require_once( FACTORYS['USER'] );
 require_once( FACTORYS['CREDITCARD'] );
 require_once( FACTORYS['ORDER'] );
 require_once  ( CONTROLLERS['FORM'] );

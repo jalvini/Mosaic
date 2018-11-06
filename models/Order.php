@@ -5,10 +5,12 @@
  * Time: 08:29 AM
  */
 
-class Order extends Person
+class Order
 {
     protected $orderItem;
     protected $orderPrice;
+    protected $firstName;
+    protected $lastName;
 
     public function __construct($orderItem, $orderPrice, $firstName, $lastName){
         $this->orderItem = $orderItem;
